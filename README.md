@@ -212,9 +212,6 @@ Every time you paste a raw `git log`, `docker ps`, or `kubectl get pods` output 
 ### Setup
 
 ```bash
-# Install globally (one-time)
-npm i -g rtk
-
 # Initialise config in this repo
 rtk init
 ```
