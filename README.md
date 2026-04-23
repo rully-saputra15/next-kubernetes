@@ -16,7 +16,7 @@ This repo is a reference architecture for shipping a Next.js frontend to product
 | 🎨 Styling | Tailwind CSS v4 | Zero-runtime utility CSS |
 | 🐳 Container | Docker multi-stage build | Separates install / build / run concerns; build artefacts never leak into the runner |
 | ☸️ Orchestration | Kubernetes + Kustomize | Declarative manifests, easy overlay patching without Helm |
-| 🗂️ Registry | Google Artifact Registry (`asia-southeast1`) | Private registry co-located with GKE for fast pulls |
+| 🗂️ Registry | Google Artifact Registry | Private registry co-located with GKE for fast pulls |
 
 ---
 
@@ -73,7 +73,7 @@ docker compose up --build
 ```bash
 bash scripts/build-docker.sh
 # Tags the image as:
-# asia-southeast1-docker.pkg.dev/gke-projects-494002/next-js/nextjs-standalone:<version>
+# <YOUR_REGISTRY>/<YOUR_PROJECT>/<YOUR_IMAGE>:<version>
 # 📌 Version is read from package.json → "version" field automatically
 ```
 
@@ -141,7 +141,7 @@ bash scripts/push-artifact.sh
 3. Update the image tag in `manifests/nextjs-app.yaml`:
 
 ```yaml
-image: asia-southeast1-docker.pkg.dev/gke-projects-494002/next-js/nextjs-standalone:0.2.0
+image: <YOUR_REGISTRY>/<YOUR_PROJECT>/<YOUR_IMAGE>:0.2.0
 ```
 
 4. Apply and confirm:

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nextjs-app
-        image: asia-southeast1-docker.pkg.dev/gke-projects-494002/next-js/nextjs-standalone:0.1.0
+        image: <YOUR_REGISTRY>/<YOUR_PROJECT>/<YOUR_IMAGE>:<VERSION>
         resources:
           requests:
             memory: "500Mi"
