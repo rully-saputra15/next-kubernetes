@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nextjs-svc
+spec:
+  type: LoadBalancer
+  selector:
+    app: nextjs-app
+  ports:
+  - port: 3000
+    targetPort: 3000
