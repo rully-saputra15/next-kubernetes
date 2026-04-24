@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1
+
 # 258mb
 ARG NODE_VERSION=24.13.0-slim 
 # 194 Mb
